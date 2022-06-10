@@ -2,8 +2,8 @@
   <div>
     <div class="block has-text-centered">
       <div class="columns">
-        <div class="column is-2 has-text-centre">
-          <img width="84" height="84" :src="currentDay['condition']['icon']" />
+        <div class="column is-2 has-text-centre" v-if="currentDay.condition">
+          <img width="84" height="84" :src="currentDay.condition.icon" />
         </div>
 
         <div class="column is-1 heading_div_upper">
@@ -48,7 +48,9 @@
             }}
           </p>
           <p class="is-size-5">{{ moment().format("dddd, h:mm a") }}</p>
-          <p class="is-size-5">{{ currentDay["condition"]["text"] }}</p>
+          <p class="is-size-5" v-if="currentDay.condition">
+            {{ currentDay.condition.text }}
+          </p>
         </div>
       </div>
 
@@ -187,10 +189,11 @@ export default {
             axios
               .request(options)
               .then((res) => {
-                //   console.log(res.data);
+                console.log(res.data);
                 this.location = res.data.location;
                 this.currentDay = res.data.current;
                 this.forecast = res.data.forecast.forecastday;
+                console.log("this.currentda", this.currentDay);
                 for (var d in hours) {
                   this.dataC.push(this.forecast[0].hour[d].temp_c);
                   this.dataF.push(this.forecast[0].hour[d].temp_f);
