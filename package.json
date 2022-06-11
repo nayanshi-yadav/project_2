@@ -12,6 +12,8 @@
     "chart.js": "^2.9.4",
     "chartjs-plugin-datalabels": "^1.0.0",
     "core-js": "^3.6.5",
+    "highcharts": "^10.1.0",
+    "highcharts-vue": "^1.4.0",
     "moment": "^2.29.1",
     "vue": "^2.6.11",
     "vue-axios": "^3.2.4",

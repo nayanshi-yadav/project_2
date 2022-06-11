@@ -182,7 +182,7 @@ export default {
               params: { q: this.city, days: "3" },
               headers: {
                 "x-rapidapi-key":
-                  "e29863a71fmshf46a4567718ab32p13d591jsn553837c60955",
+                  "ce379c82a8msh5fd9650bc9ddcf0p1390f5jsnb97548d1d27c",
                 "x-rapidapi-host": "weatherapi-com.p.rapidapi.com",
               },
             };
